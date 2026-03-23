@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --black: #080808;
+  --black2: #111111;
+  --black3: #1A1A1A;
+  --black4: #242424;
+  --gold: #D4A017;
+  --gold-light: #F5C842;
+  --gold-dim: #A07810;
+  --gold-glow: rgba(212,160,23,0.15);
+  --white: #FFFFFF;
+  --white-soft: #F5F0E8;
+  --muted: #666666;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-black: var(--black);
+  --color-black2: var(--black2);
+  --color-black3: var(--black3);
+  --color-black4: var(--black4);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dim: var(--gold-dim);
+  --color-gold-glow: var(--gold-glow);
+  --color-white: var(--white);
+  --color-white-soft: var(--white-soft);
+  --color-muted: var(--muted);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--black);
+  color: var(--white);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s linear infinite;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
